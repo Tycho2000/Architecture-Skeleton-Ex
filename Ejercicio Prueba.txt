@@ -1,0 +1,41 @@
+1.Pelota rebota y hay q cogerla con una nave.
+Opcional:
+2.Lo mismo pero con una AI.
+3.Tiempo contador hacia atrás + Puntuación por cada captura. Comparación AI vs Player.
+------------------------------------------------------------------------
+1.Pelota rebota y hay q cogerla con una nave.
+1.1.Bucle principal ejemplo de pelota rebotando.
+1.2.Separarlo en funciones Inicialización, Input, Logic, Output, Shutdown.
+1.3.Introducción de tiempo de juego => La velocidad de la pelota es independiente de la velocidad de procesado.
+1.4.Crear clase temporizador de control de tiempos.
+1.5.Utilizar clase pelota -> Introducir funcionalidad movimiento.
+1.6.Introducción nave player -> 
+	Clase que almacena Input.
+	Clase nave player -> Lee Input, Movimiento.
+1.7.Clase Entity abstracta que contiene Subcomponentes. Poner Update de subcomps en la clase Entity, nicialización + Shutdown.
+1.8.Transformar Pelota + Player en entidades heredadas de cEntity. Tendrá Id (String (STL)).
+1.9.Subdividirlo en componentes. La comunicación puede ser directa.
+1.10. Mensajería:
+	Creación clase mensaje abstracta.
+	Creación de mensajes a partir de herencia.
+	Utilizar dynamic_cast para discernir tipo.
+	Creación de mensajería con bucle en cEntity (paso de de mensajes a todos los subcomps). 
+	Cambiar las llamadas directas.
+1.11.Creación de manager de mensajes para que sólo reciba el componente registrado.
+1.12. Introducir enumerado?.
+1.13. RTTI de mensajes.
+1.14.Introducir Manager Entities. Se utilizaría en la Lógica, Render para iterar con todas las entidades.
+1.15. RTTI de Entidades.
+--------------------------------------------------------------------------------------
+2.Comp. Lógica General, Comp Contador, comp puntuación.
+--------------------------------------------------------------------------------------
+3.Lo mismo pero con una AI.
+--------------------------------------------------------------------------------------
+4.Menú principal.
+--------------------------------------------------------------------------------------
+5.Configuración desde fichero JSON:
+	Velocidad pelota.
+	Velocidad nave.
+	Velocidad de rotación.
+--------------------------------------------------------------------------------------
+Opcional: Varias pelotas.

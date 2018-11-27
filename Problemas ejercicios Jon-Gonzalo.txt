@@ -1,0 +1,29 @@
+Problemas swalib-master (Jon):
+Compilación:
+	- Compilación en x86
+	- Incluir opengl32.lib -> Properties (solution) -> Linker -> Input -> Additional Properties
+	Ejecución:
+	- Al ejecutar no encuentra los ficheros png:
+	Si se ejecuta desde el .exe -> no hay problema -> el directorio data están en el mismo dir. que el .exe
+	Si se ejecuta desde el IDE -> poner en Properties (project) del Configuration:Release -> Debugging -> Working Directory -> $(OutDir)
+	Si se ejecuta desde el IDE -> poner en Properties (project) del Configuration:Debug -> Debugging -> Working Directory -> $(SolutionDir)/Release
+
+
+Problemas dead-line-revenge (Gonzalo):
+Compilación:
+	- Windows SDK not found -> Sobre la solucion (2º botón mouse) -> Retarget solution -> Escoger la última
+	- Cannot open include file: 'openal/al.h' -> Properties (project) -> C/C++ -> General -> Additional Include Directories -> $(SolutionDir)\..\lib\
+	- No se encuentran funciones vinculadas a OpenAL -> Properties (project) -> Linker -> Input -> Additional Dependencies -> $(SolutionDir)\..\lib\openal\openal32.lib;
+	Ejecución:
+	- Al ejecutar no encuentra openal32.dll -> 
+	Si se ejecuta desde el IDE del Visual C++ -> Ponerlo en la misma carpeta que el proyecto.
+	Si se ejecuta directamente desde el .exe -> Ponerlo en la misma carpeta que el ejecutable
+	- Al ejecutar no encuentra los ficheros png:
+	Si se ejecuta desde el .exe -> mover directorio data al directorio donde se encuentra el .exe
+	Si se ejecuta desde el IDE -> poner en Properties (project) del Configuration:Release -> Debugging -> Working Directory -> $(OutDir)
+	Si se ejecuta desde el IDE -> poner en Properties (project) del Configuration:Debug -> Debugging -> Working Directory -> $(SolutionDir)/Release
+	
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+- Carpeta oculta .vs demasiado grande -> Problema con 2017. Usado por IntelliSense -> Tools -> Text Editor -> C/C++ -> Advanced -> IntelliSense -> Disable Automatic Precompiled Header = True
+
+
